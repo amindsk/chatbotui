@@ -1,0 +1,9 @@
+input{
+    font-size: 12px;
+    width: 100%;
+    border: none;
+    box-sizing:border-box
+}
+input:focus-visible{
+    outline: unset;
+}

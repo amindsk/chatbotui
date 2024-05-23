@@ -1,0 +1,1 @@
+export const CHAT_SLICE_NAME = "chat";
