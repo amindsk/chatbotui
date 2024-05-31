@@ -5,14 +5,19 @@ import axios from "axios";
 import ImplicitTable from "../../components/mui/Table/ImplicitTable";
 import PushPinIcon from '@mui/icons-material/PushPin';
 import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
+import { handleAddLoading, handleRemoveLoading } from "../../common/commonSlice";
+import { useDispatch } from "react-redux";
+import { openErrorToast } from "../../common/toast";
 const Chat = () => {
     const theme = useTheme();
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
+    const dispatch = useDispatch();
     const getResponse = async (message) => {
+        dispatch(handleAddLoading());
         try {
             const { data } = await axios({
-                url: 'http://localhost:3001/chat/send-msg-sql',
+                url: 'http://localhost:8001/chat/send-msg-sql',
                 method: 'POST',
                 data: { user_msg: message },
             });
@@ -20,29 +25,28 @@ const Chat = () => {
                 return [...messages, {
                     id: messages.length,
                     message,
-                    ...data
+                    ...data,
+                    df: JSON.parse(data.df)
                 }]
             });
         }
         catch (err) {
-            // setMessages(() => {
-            //     return [...messages, {
-            //         message
-            //     }]
-            // });
+            openErrorToast("Unable to get reponse");
             console.log("Error", err);
         }
+        dispatch(handleRemoveLoading());
     }
 
     const getGraph = async (id, message, graphType, dataFrame) => {
+        dispatch(handleAddLoading());
         try {
             const { data } = await axios({
-                url: 'http://localhost:3001/chat/send-msg-graph',
+                url: 'http://localhost:8001/chat/send-msg-graph',
                 method: 'POST',
                 data: {
                     user_msg: message,
-                    grap_type: graphType,
-                    df: dataFrame
+                    graph_type: graphType,
+                    df: JSON.stringify(dataFrame)
                 },
                 responseType: 'blob',
             });
@@ -57,8 +61,10 @@ const Chat = () => {
             }));
         }
         catch (err) {
+            openErrorToast("Unable to get graph");
             console.log("Error", err);
         }
+        dispatch(handleRemoveLoading());
     }
 
     const getTable = (df) => {
@@ -299,7 +305,7 @@ const Chat = () => {
                                                 )}
                                             </IconButton>
                                         </Box>
-                                        <iframe src={message.graph} style={{ width: '100%', height: '350px', border: 'none', overflow: 'scroll' }}></iframe>
+                                        <iframe src={message.graph} style={{ width: '100%', height: '350px', border: 'none', overflow: 'auto' }}></iframe>
                                     </Box>
                                 )}
                             </>;

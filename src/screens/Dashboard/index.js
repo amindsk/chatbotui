@@ -9,34 +9,25 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { handleAddLoading, handleRemoveLoading } from "../../common/commonSlice";
+import { useDispatch } from "react-redux";
+import { openErrorToast } from "../../common/toast";
 const Dashboard = () => {
     const theme = useTheme();
     const [files, setFiles] = useState([]);
     const [question, setQuestion] = useState('');
     const [visualization, setVisualization] = useState('');
-    const getFile = async () => {
-        try {
-            const { data } = await axios({
-                url: 'http://localhost:3001/chart',
-                method: 'GET',
-                responseType: 'blob',
-            });
-            const url = window.URL.createObjectURL(data);
-            setFiles([...files, url]);
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }
+    const dispatch = useDispatch();
 
     const getHtmlReponse = async (question, visualization) => {
+        dispatch(handleAddLoading());
         try {
             const { data } = await axios({
-                url: 'http://localhost:3001/response-chart',
+                url: 'http://localhost:8001/chat/send-quick-graph-req',
                 method: 'POST',
                 data: {
-                    question,
-                    visualization
+                    user_msg: question,
+                    graph_type: visualization
                 },
                 responseType: 'blob',
             });
@@ -44,15 +35,11 @@ const Dashboard = () => {
             setFiles([...files, url]);
         }
         catch (err) {
+            openErrorToast("Unable to get graph");
             console.log(err);
         }
+        dispatch(handleRemoveLoading());
     }
-    useEffect(() => {
-        getFile();
-    }, []);
-
-
-
 
 
     //DUstbin
