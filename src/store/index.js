@@ -1,55 +1,19 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import loginReducer from '../screens/Login/loginSlice';
 import dashboardReducer from '../screens/Dashboard/dashboardSlice';
 import commonReducer from '../common/commonSlice';
 import chatReducer from '../screens/Chat/chatSlice';
-import {
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import { removeItem } from '../utils/storage';
-import { HANDLE_LOGOUT } from '../screens/Login/constants';
-import { REDUX_PERSIST_KEY, PERSIST_STORAGE_ITEM_KEY } from '../common/constants';
-
-const persistConfig = {
-  key: REDUX_PERSIST_KEY,
-  version: 1,
-  storage,
-  // blacklist: ['common']
-}
 
 
 const appReducer = combineReducers({
-  login: loginReducer,
   dashboard: dashboardReducer,
   common: commonReducer,
   chat: chatReducer,
 });
 
-const rootReducer = (state, action) => {
-  if (action.type === HANDLE_LOGOUT) {
-    removeItem(PERSIST_STORAGE_ITEM_KEY);
-    state = undefined;
-  }
-  return appReducer(state, action)
-}
-
-const persistedReducer = persistReducer(persistConfig, rootReducer)
-
 const store = configureStore({
-  reducer: persistedReducer,
+  reducer: appReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
-      },
-    }),
+    getDefaultMiddleware(),
 });
 
 export const dispatch = store.dispatch;

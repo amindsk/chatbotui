@@ -1,1 +1,0 @@
-export const QUERY_EDITOR_TITLE = "Query Editor"

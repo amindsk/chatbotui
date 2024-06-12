@@ -1,37 +1,37 @@
 import axios from 'axios';
-import { AUTH_TOKEN_KEY } from '../common/constants';
-import { openErrorToast } from '../common/toast';
+// import { AUTH_TOKEN_KEY } from '../common/constants';
+// import { openErrorToast } from '../common/toast';
 
-import { dispatch } from '../store';
-import { handleLogout } from '../screens/Login/loginSlice';
-import { setItem, getItem } from '../utils/storage';
+// import { dispatch } from '../store';
+// import { handleLogout } from '../screens/Login/loginSlice';
+// import { setItem, getItem } from '../utils/storage';
 
 
-axios.defaults.headers.common['Content-Type'] = 'application/json';
-axios.defaults.headers.post['Accept'] = 'application/json';
+// axios.defaults.headers.common['Content-Type'] = 'application/json';
+// axios.defaults.headers.post['Accept'] = 'application/json';
 
-if (getItem(AUTH_TOKEN_KEY)) {
-    axios.defaults.headers['authorization'] = getItem(AUTH_TOKEN_KEY);
-    document.cookie = `authorization=${getItem(AUTH_TOKEN_KEY)}`;
-}
+// if (getItem(AUTH_TOKEN_KEY)) {
+//     axios.defaults.headers['authorization'] = getItem(AUTH_TOKEN_KEY);
+//     document.cookie = `authorization=${getItem(AUTH_TOKEN_KEY)}`;
+// }
 
 const client = axios;
 
-export const setAuthToken = (token) => {
-    axios.defaults.headers['authorization'] = token;
-    document.cookie = `authorization=${token}`;
-};
+// export const setAuthToken = (token) => {
+//     axios.defaults.headers['authorization'] = token;
+//     document.cookie = `authorization=${token}`;
+// };
 
-export const removeAuthToken = () => {
-    delete axios.defaults.headers['authorization'];
-    document.cookie = `authorization=${undefined}`;
-};
+// export const removeAuthToken = () => {
+//     delete axios.defaults.headers['authorization'];
+//     document.cookie = `authorization=${undefined}`;
+// };
 
 // to parse error(s) caught by axios during any HTTP request
 export function parseClientError(error) {
     if (error.response && error.response.status === 401) {
-        openErrorToast(error.response.data.message);
-        dispatch(handleLogout());
+        // openErrorToast(error.response.data.message);
+        // dispatch(handleLogout());
     }
     const message = (error.response
         && error.response.data)
@@ -70,12 +70,12 @@ async function request(method, url, data = {}, params = {}) {
             method: method,
             url: url,
             data: data,
-            params: params,
+            params: params
         });
-        if (response.headers.authorization) {
-            setAuthToken(response.headers.authorization);
-            setItem(AUTH_TOKEN_KEY, response.headers.authorization);
-        }
+        // if (response.headers.authorization) {
+        //     setAuthToken(response.headers.authorization);
+        //     setItem(AUTH_TOKEN_KEY, response.headers.authorization);
+        // }
         return response;
     } catch (e) {
         throw parseClientError(e);
@@ -86,8 +86,8 @@ export async function post(url, data = {}, params = {}) {
     return await request('post', url, data, params);
 }
 
-export async function get(url, data = {}, params = {}) {
-    return await request('get', url, data, params);
+export async function get(url, params = {}) {
+    return await request('get', url, {}, params);
 }
 
 export async function del(url, data = {}, params = {}) {

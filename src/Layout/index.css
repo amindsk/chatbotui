@@ -1,0 +1,85 @@
+.appbar {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(113, 42, 255);
+    color: #FFF;
+    font-family: Monaco;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    /* border-bottom: 2px solid rgb(113, 42, 255); */
+    /* box-shadow: 0px 5px 10px 10px rgb(0, 0, 0); */
+}
+
+.logo-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 10px;
+    height: 10px;
+    margin-left: 30px;
+    border-radius: 5px;
+    background-color: #FFF;
+    border: 5px solid rgb(113, 42, 255);
+    box-shadow: 0px 0px 0px 5px #FFF;
+    animation: 1s roll;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes roll {
+    0% {
+        transform: rotate(0deg);
+
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+.links>ul {
+    display: flex;
+    list-style: none;
+}
+
+.links>ul>li {
+    margin-left: 30px;
+}
+
+.links>ul>li>a {
+    text-decoration: none;
+    color: #CCC;
+    font-weight: bold;
+}
+
+.links>ul>li>a:hover {
+    text-decoration: none;
+    color: #FFF;
+    cursor: pointer;
+}
+.links>ul>li>.active {
+    text-decoration: none;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.profile>button {
+    height: 40px;
+    font-weight: bold;
+    border-radius: 5px;
+
+    background-color: rgb(113, 42, 255);
+    border: 2px solid #FFF;
+    color: #FFF;
+}
+
+.profile>button:hover {
+    background-color: white;
+    color: rgb(113, 42, 255);
+    cursor: pointer;
+}

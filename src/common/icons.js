@@ -1,179 +1,22 @@
-import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import PermDataSettingOutlinedIcon from '@mui/icons-material/PermDataSettingOutlined';
-import AddIcon from '@mui/icons-material/Add'
-import HelpIcon from '@mui/icons-material/Help';
-import BorderColorIcon from '@mui/icons-material/BorderColor';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FullscreenIcon from '@mui/icons-material/Fullscreen';
-import CloseIcon from '@mui/icons-material/Close';
-import SettingsIcon from '@mui/icons-material/Settings';
-import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
-import VpnKeyIcon from '@mui/icons-material/VpnKey';
-import VpnKeyTwoToneIcon from '@mui/icons-material/VpnKeyTwoTone';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import KeyIcon from '@mui/icons-material/Key';
-import KeyOffIcon from '@mui/icons-material/KeyOff';
-import SpeedIcon from '@mui/icons-material/Speed';
-import DoneIcon from '@mui/icons-material/Done';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import UploadIcon from '@mui/icons-material/Upload';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import FunctionsIcon from '@mui/icons-material/Functions';
-import NotesIcon from '@mui/icons-material/Notes';
-import ViewColumnIcon from '@mui/icons-material/ViewColumn';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
-import SearchIcon from '@mui/icons-material/Search';
-import EditIcon from '@mui/icons-material/Edit';
-import CheckIcon from '@mui/icons-material/Check';
-import RemoveIcon from '@mui/icons-material/Remove';
-import SaveIcon from '@mui/icons-material/Save';
+export const PaperPlane = ({ fill, width, height }) => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" fill={fill} width={width} height={height} viewBox="0 0 512 512">
+            <path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480V396.4c0-4 1.5-7.8 4.2-10.7L331.8 202.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8 17.7 316.6C7.1 311.3 .3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z" />
+        </svg>)
+}
 
-import AssessmentIcon from '@mui/icons-material/Assessment';
-import DonutLargeIcon from '@mui/icons-material/DonutLarge';
-import DeviceHubIcon from '@mui/icons-material/DeviceHub';
-import SensorsIcon from '@mui/icons-material/Sensors';
-import LiveTvIcon from '@mui/icons-material/LiveTv';
-import QueryStatsIcon from '@mui/icons-material/QueryStats';
-import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
+export const Pin = ({ fill, width, height }) => {
+    return (
+        <svg fill={fill} width={width} height={height} viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 14.2539 35.9688 L 25.9492 35.9688 L 25.9492 48.0156 C 25.9492 51.5781 27.4258 54.5781 28.0117 54.5781 C 28.5976 54.5781 30.0742 51.5781 30.0742 48.0156 L 30.0742 35.9688 L 41.7461 35.9688 C 43.3633 35.9688 44.5351 34.9375 44.5351 33.3672 C 44.5351 32.3828 44.2305 31.6797 43.5508 30.9532 L 36.3789 23.1719 C 35.8867 22.6563 35.5820 22.2813 35.6992 21.3203 L 36.8945 12.7657 C 36.9649 12.2735 37.0117 11.9922 37.4336 11.6875 L 43.1992 7.5157 C 44.4883 6.5781 45.0508 5.4297 45.0508 4.3750 C 45.0508 2.8047 43.7851 1.4219 41.9805 1.4219 L 14.0195 1.4219 C 12.2149 1.4219 10.9492 2.8047 10.9492 4.3750 C 10.9492 5.4297 11.5117 6.5781 12.7773 7.5157 L 18.5429 11.6875 C 18.9883 11.9922 19.0351 12.2735 19.1054 12.7657 L 20.3008 21.3203 C 20.4180 22.2813 20.1133 22.6563 19.6211 23.1719 L 12.4492 30.9532 C 11.7695 31.6797 11.4649 32.3828 11.4649 33.3672 C 11.4649 34.9375 12.6367 35.9688 14.2539 35.9688 Z" />
+        </svg>
+    );
+}
 
-import DriveFileMoveIcon from '@mui/icons-material/DriveFileMove';
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
-
-import RestoreIcon from '@mui/icons-material/Restore';
-
-import InfoIcon from '@mui/icons-material/Info';
-import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
-import TuneIcon from '@mui/icons-material/Tune';
-import TagIcon from '@mui/icons-material/Tag';
-import FolderOpenIcon from '@mui/icons-material/FolderOpen';
-import FileOpenIcon from '@mui/icons-material/FileOpen';
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-
-import WarningIcon from '@mui/icons-material/Warning';
-import FiberNewIcon from '@mui/icons-material/FiberNew';
-import FlareIcon from '@mui/icons-material/Flare';
-import NightlightIcon from '@mui/icons-material/Nightlight';
-import InsightsIcon from '@mui/icons-material/Insights';
-import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import AutoFixOffIcon from '@mui/icons-material/AutoFixOff';
-import HomeIcon from '@mui/icons-material/Home';
-import RefreshIcon from '@mui/icons-material/Refresh';
-import FolderIcon from '@mui/icons-material/Folder';
-import FolderOffOutlinedIcon from '@mui/icons-material/FolderOffOutlined';
-import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
-import WarningAmberIcon from '@mui/icons-material/WarningAmber';
-import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
-import JoinRightIcon from '@mui/icons-material/JoinRight';
-import EngineeringIcon from '@mui/icons-material/Engineering';
-import DownloadIcon from '@mui/icons-material/Download';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import TerminalIcon from '@mui/icons-material/Terminal';
-import RouteIcon from '@mui/icons-material/Route';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
-import LabelIcon from '@mui/icons-material/Label';
-import CategoryIcon from '@mui/icons-material/Category';
-
-
-const icons = {
-  JoinRight:JoinRightIcon,
-  Dashboard: DashboardOutlinedIcon,
-  Assessment: AssessmentIcon,
-  DonutLarge: DonutLargeIcon,
-  DeviceHub: DeviceHubIcon,
-  Sensors: SensorsIcon,
-  LiveTv: LiveTvIcon,
-  QueryStats: QueryStatsIcon,
-  MonitorHeart: MonitorHeartIcon,
-  DriveFileMove: DriveFileMoveIcon,
-  AccountTree: AccountTreeIcon,
-  FlightTakeoff: FlightTakeoffIcon,
-  CheckCircleOutline: CheckCircleOutlineIcon,
-  CheckCircle: CheckCircleIcon,
-  Close: CloseIcon,
-  PermDataSettingOutlined: PermDataSettingOutlinedIcon,
-  Add: AddIcon,
-  Help: HelpIcon,
-  BorderColor: BorderColorIcon,
-  Delete: DeleteIcon,
-  FullScreen: FullscreenIcon,
-  Settings: SettingsIcon,
-  VpnKeyOutlined: VpnKeyOutlinedIcon,
-  VpnKey: VpnKeyIcon,
-  VpnKeyTwoTone: VpnKeyTwoToneIcon,
-  AccountCircle: AccountCircleIcon,
-  AdminPanelSettings: AdminPanelSettingsIcon,
-  Visibility:VisibilityIcon,
-  VisibilityOff:VisibilityOffIcon,
-  NotificationsActive: NotificationsActiveIcon,
-  Key: KeyIcon,
-  KeyOff: KeyOffIcon,
-  Speed: SpeedIcon,
-  AccountCircleOutlined: AccountCircleOutlinedIcon,
-  Done: DoneIcon,
-  ArrowForwardIos: ArrowForwardIosIcon,
-  ArrowBackIos: ArrowBackIosIcon,
-  Upload: UploadIcon,
-  PlayArrow: PlayArrowIcon,
-  Functions: FunctionsIcon,
-  ViewColumn: ViewColumnIcon,
-  Notes: NotesIcon,
-  FilterAlt: FilterAltIcon,
-  KeyboardArrowLeft: KeyboardArrowLeftIcon,
-  KeyboardArrowRight:KeyboardArrowRightIcon,
-  KeyboardArrowUp: KeyboardArrowUpIcon,
-  KeyboardArrowDown: KeyboardArrowDownIcon,
-  DragIndicator: DragIndicatorIcon,
-  Search:SearchIcon,
-  Edit:  EditIcon,
-  Check: CheckIcon,
-  Remove: RemoveIcon,
-  Save: SaveIcon,
-  Restore: RestoreIcon,
-  Info: InfoIcon,
-  ChangeCircle: ChangeCircleIcon,
-  Tune: TuneIcon,
-  Tag: TagIcon,
-  FolderOpen: FolderOpenIcon,
-  FileOpen:FileOpenIcon,
-  KeyboardDoubleArrowRight: KeyboardDoubleArrowRightIcon,
-  Warning: WarningIcon,
-  FiberNew: FiberNewIcon,
-  Flare: FlareIcon,
-  Nightlight: NightlightIcon,
-  Insights: InsightsIcon,
-  AutoFixHigh: AutoFixHighIcon,
-  AutoFixOff: AutoFixOffIcon,
-  Home: HomeIcon,
-  Refresh: RefreshIcon,
-  Folder: FolderIcon,
-  FolderOff: FolderOffOutlinedIcon,
-  PanoramaFishEye: PanoramaFishEyeIcon,
-  WarningAmber: WarningAmberIcon,
-  FullscreenExit: FullscreenExitIcon,
-  Engineering: EngineeringIcon,
-  Download: DownloadIcon,
-  ContentCopy: ContentCopyIcon,
-  Terminal: TerminalIcon,
-  Route: RouteIcon,
-  ExpandMore: ExpandMoreIcon,
-  HistoryEdu: HistoryEduIcon,
-  Label: LabelIcon,
-  Category: CategoryIcon
-};
-
-export default icons;
+export const UnPin = ({ fill, width, height }) => {
+    return (
+        <svg fill={fill} width={width} height={height} viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 47.2561 44.3576 C 47.9779 45.0794 49.1191 45.0794 49.7943 44.3576 C 50.4924 43.6591 50.5158 42.5414 49.7943 41.8196 L 8.6498 .6985 C 7.9512 0 6.7870 0 6.0885 .6985 C 5.4132 1.3738 5.4132 2.5613 6.0885 3.2366 Z M 35.9629 24.2162 L 37.3134 14.4599 C 37.3600 13.9476 37.4531 13.6449 37.9188 13.3422 L 43.5770 9.2441 C 44.8577 8.3127 45.3932 7.1717 45.3932 6.1239 C 45.3932 4.5638 44.1591 3.1900 42.3429 3.1900 L 14.9367 3.1900 Z M 13.1670 37.5119 L 25.6011 37.5119 L 25.6011 49.4803 C 25.6011 53.0195 27.0914 56 27.6502 56 C 28.2323 56 29.7226 53.0195 29.7226 49.4803 L 29.7226 37.5119 L 36.2656 37.5119 L 18.7554 20.0016 L 19.1512 22.9588 C 19.2910 23.9135 18.9650 24.2861 18.4993 24.7983 L 11.3741 32.5289 C 10.6988 33.2507 10.3962 33.9493 10.3962 34.9273 C 10.3962 36.4873 11.5371 37.5119 13.1670 37.5119 Z" />
+        </svg>
+    );
+}

@@ -1,0 +1,117 @@
+.main {
+    
+}
+.message-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.message-input > input {
+    width: 35%;
+    height: 35px;
+    margin: 10px;
+    padding: 5px;
+    font-family: Monaco;
+    font-size: larger;
+    border: 1px solid rgb(113, 42, 255);
+    border-radius: 5px;
+    outline: none;
+}
+
+.message-input > input:focus {
+    box-shadow: 0px 0px 5px 1px rgba(113, 42, 255, .5);
+}
+
+.message-input > .select-visualization {
+    width: 35%;
+    /* height: 30px; */
+    margin: 10px;
+    padding: 2px;
+    font-family: Monaco;
+    font-size: larger;
+    border: 1px solid rgb(113, 42, 255);
+    border-radius: 5px;
+}
+
+/* .message-input > .select-visualization >>> .select__control {
+    outline: none;
+    border: none;
+}
+.message-input > .select-visualization >>> .select__option {
+    outline: none;
+    background-color: aqua;
+} */
+
+.message-input > button {
+    width: 10%;
+    height: 40px;
+    margin: 10px;
+    font-size: larger;
+    font-family: Monaco;
+    border: 1px solid rgb(113, 42, 255);
+    color: rgb(113, 42, 255);
+    outline: none;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.message-input > button:hover {
+    cursor: pointer;
+    background-color: rgb(113, 42, 255);
+    color: #FFF;
+}
+
+.widgets-container {
+    width: calc(100% - 4px);
+    color: white;
+    /* background-color: rgba(113, 42, 255, 1); */
+    /* border: 2px solid rgb(113, 42, 255); */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+    margin-top: 5px;
+}
+
+.resizeable-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 10px;
+
+    box-shadow: 0px 0px 10px 1px rgba(113, 42, 255, .5);
+}
+
+.moveable-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.moveable-box::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: rgba(113, 42, 255, .5);
+    border: 2px solid rgb(113, 42, 255);
+    border-radius: 2px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.moveable-box:hover:after {
+    background-color: rgba(113, 42, 255, 1);
+}
+
+.moveable-box > iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #FFF;
+    border-radius: 10px;
+    /* height: '100%', width: '100%', border: 'none', backgroundColor: 'red', border: '1px solid black' */
+}
