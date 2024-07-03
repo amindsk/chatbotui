@@ -17,7 +17,7 @@ const Dashboard = () => {
     return (
         <div className="main">
             <div className="message-input">
-                <input placeholder="Qestion here" value={question} onChange={e => setQuestion(e.target.value)} />
+                <input placeholder="Question here" value={question} onChange={e => setQuestion(e.target.value)} />
                 <Select
                     className="select-visualization"
                     classNamePrefix="select"
