@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import './index.css';
 import { PaperPlane, Pin, UnPin } from "../../common/icons";
-import { handleChangeMessage, getMessage, getMessages, getLoading, sendMessage, sendMessageGraph, handleTogglePinToDashboard } from "./chatSlice";
+import { handleChangeMessage, getMessage, getMessages, getChatLoading, sendMessage, sendMessageGraph, handleTogglePinToDashboard } from "./chatSlice";
 import { useDispatch, useSelector } from "react-redux";
 import DFTable from "./DFTable";
+import { handleAddWidget, handleRemoveWidget } from "../Dashboard/dashboardSlice";
+import Loading from '../../components/Loading';
 const Chat = () => {
 
     const message = useSelector(getMessage);
     const messages = useSelector(getMessages);
-    const laoding = useSelector(getLoading);
+    const chatLaoding = useSelector(getChatLoading);
     const dispatch = useDispatch();
 
     return (
@@ -46,7 +48,15 @@ const Chat = () => {
                             {msg.graph && (
                                 <div className="visualization">
                                     <div className="visualization-title">
-                                        <button className="btn-pin" onClick={() => dispatch(handleTogglePinToDashboard(msg.id))}>
+                                        <button className="btn-pin" onClick={() => {
+                                            dispatch(handleTogglePinToDashboard(msg.id));
+                                            if (msg.pinnedToDashboard) {
+                                                dispatch(handleRemoveWidget({ id: msg.id }));
+                                            }
+                                            else {
+                                                dispatch(handleAddWidget({ url: msg.graph, id: msg.id }));
+                                            }
+                                        }}>
                                             {msg.pinnedToDashboard ? (
                                                 <UnPin fill="rgb(113, 42, 255)" width={20} height={20} />
                                             ) : (<Pin fill="rgb(113, 42, 255)" width={20} height={20} />)}
@@ -101,6 +111,10 @@ const Chat = () => {
                     </button>
                 </div>
             </div>
+            <Loading
+            isLoading={chatLaoding}
+            text={"Loading"}
+            />
         </div>
     );
 }

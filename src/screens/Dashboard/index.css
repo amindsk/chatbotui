@@ -1,6 +1,3 @@
-.main {
-    
-}
 .message-input {
     display: flex;
     justify-content: center;
@@ -14,13 +11,13 @@
     padding: 5px;
     font-family: Monaco;
     font-size: larger;
-    border: 1px solid rgb(113, 42, 255);
+    border: 1px solid rgb(30, 50, 92);
     border-radius: 5px;
     outline: none;
 }
 
 .message-input > input:focus {
-    box-shadow: 0px 0px 5px 1px rgba(113, 42, 255, .5);
+    box-shadow: 0px 0px 5px 1px rgba(30, 50, 92, .5);
 }
 
 .message-input > .select-visualization {
@@ -30,7 +27,7 @@
     padding: 2px;
     font-family: Monaco;
     font-size: larger;
-    border: 1px solid rgb(113, 42, 255);
+    border: 1px solid rgb(30, 50, 92);
     border-radius: 5px;
 }
 
@@ -49,8 +46,8 @@
     margin: 10px;
     font-size: larger;
     font-family: Monaco;
-    border: 1px solid rgb(113, 42, 255);
-    color: rgb(113, 42, 255);
+    border: 1px solid rgb(30, 50, 92);
+    color: rgb(30, 50, 92);
     outline: none;
     background-color: #fff;
     border-radius: 5px;
@@ -58,15 +55,15 @@
 
 .message-input > button:hover {
     cursor: pointer;
-    background-color: rgb(113, 42, 255);
+    background-color: rgb(30, 50, 92);
     color: #FFF;
 }
 
 .widgets-container {
     width: calc(100% - 4px);
     color: white;
-    /* background-color: rgba(113, 42, 255, 1); */
-    /* border: 2px solid rgb(113, 42, 255); */
+    /* background-color: rgba(30, 50, 92, 1); */
+    /* border: 2px solid rgb(30, 50, 92); */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -81,7 +78,7 @@
     border-radius: 10px;
     margin: 10px;
 
-    box-shadow: 0px 0px 10px 1px rgba(113, 42, 255, .5);
+    box-shadow: 0px 0px 10px 1px rgba(30, 50, 92, .5);
 }
 
 .moveable-box {
@@ -95,8 +92,8 @@
     content: '';
     width: 30px;
     height: 30px;
-    background-color: rgba(113, 42, 255, .5);
-    border: 2px solid rgb(113, 42, 255);
+    background-color: rgba(30, 50, 92, .5);
+    border: 2px solid rgb(30, 50, 92);
     border-radius: 2px;
     position: absolute;
     right: 0;
@@ -104,7 +101,7 @@
 }
 
 .moveable-box:hover:after {
-    background-color: rgba(113, 42, 255, 1);
+    background-color: rgba(30, 50, 92, 1);
 }
 
 .moveable-box > iframe {

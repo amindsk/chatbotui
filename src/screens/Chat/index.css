@@ -10,7 +10,7 @@
 .side-bar {
     flex: 2;
     height: calc(100vh - 70px);
-    background-color:rgb(113, 42, 255);
+    background-color:rgb(30, 50, 92);
     border: 10px solid white;
 }
 
@@ -23,15 +23,15 @@
 
 .chat-title {
     height: 50px;
-    /* background-color:rgb(113, 42, 255); */
-    color: rgb(113, 42, 255);
+    /* background-color:rgb(30, 50, 92); */
+    color: rgb(30, 50, 92);
     font-family: Monaco;
     display: flex;
     justify-content: flex-start;
     align-items: left;
     position: relative;
-    box-shadow: 0px 5px 10px 1px rgba(113, 42, 255, .3);
-    border-bottom: 1px solid rgb(113, 42, 255);
+    box-shadow: 0px 5px 10px 1px rgba(30, 50, 92, .3);
+    border-bottom: 1px solid rgb(30, 50, 92);
     border-radius: 10px;
 }
 
@@ -39,8 +39,8 @@
     content: '';
     height: 10px;
     width: 10px;
-    background-color:rgb(113, 42, 255);
-    box-shadow: 0px 0px 0px 5px #FFF, 0px 0px 0px 10px rgb(113, 42, 255);
+    background-color:rgb(30, 50, 92);
+    box-shadow: 0px 0px 0px 5px #FFF, 0px 0px 0px 10px rgb(30, 50, 92);
     border-radius: 1px;
     position: absolute;
     top: 20px;
@@ -67,17 +67,17 @@
 .chat-messages {
     height: calc(100vh - 145px);
     overflow-y: scroll;
-    background-color: rgba(113, 42, 255, .1);
+    background-color: rgba(30, 50, 92, .1);
 }
 
 .chat-messages-with-options {
     height: calc(100vh - 245px);
     overflow-y: scroll;
-    background-color: rgba(113, 42, 255, .1);
+    background-color: rgba(30, 50, 92, .1);
 }
 
 .sent-message {
-    background-color: rgb(113, 42, 255);
+    background-color: rgb(30, 50, 92);
     color: white;
     font-family: Monaco;
     width: 75%;
@@ -86,19 +86,19 @@
     margin: 10px;
     padding: 10px;
     border-top-right-radius: 0;
-    box-shadow: 0px 5px 10px 1px rgba(113, 42, 255, .3);
+    box-shadow: 0px 5px 10px 1px rgba(30, 50, 92, .3);
 }
 
 .received-message {
     background-color: #fff;
-    /* color: rgba(113, 42, 255, .8); */
+    /* color: rgba(30, 50, 92, .8); */
     width: 75%;
     float: left;
     border-radius: 20px;
     margin: 10px;
     padding: 10px;
     border-top-left-radius: 0;
-    box-shadow: 0px 5px 10px 1px rgba(113, 42, 255, .3);
+    box-shadow: 0px 5px 10px 1px rgba(30, 50, 92, .3);
 }
 
 .visualization-options {
@@ -110,7 +110,7 @@
     margin: 10px;
     padding: 10px;
     border-top-left-radius: 0;
-    box-shadow: 0px 5px 10px 1px rgba(113, 42, 255, .3);
+    box-shadow: 0px 5px 10px 1px rgba(30, 50, 92, .3);
 }
 
 .visualization-options > h3 {
@@ -135,21 +135,21 @@
     border: none;
     outline: none;
     background-color: #FFF;
-    border: 2px solid rgb(113, 42, 255);
+    border: 2px solid rgb(30, 50, 92);
     border-radius: 5px;
-    color: rgb(113, 42, 255);
+    color: rgb(30, 50, 92);
 }
 
 .visualization-options-pair > button:hover {
     color: #FFF;
     cursor: pointer;
-    background-color: rgb(113, 42, 255);
-    border: 2px solid rgb(113, 42, 255);
+    background-color: rgb(30, 50, 92);
+    border: 2px solid rgb(30, 50, 92);
 }
 
 .visualization {
     background-color: white;
-    box-shadow: 0px 5px 10px 1px rgba(113, 42, 255, .3);
+    box-shadow: 0px 5px 10px 1px rgba(30, 50, 92, .3);
     width: 50%;
     float: left;
     border-radius: 20px;
@@ -163,7 +163,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: rgb(113, 42, 255);
+    color: rgb(30, 50, 92);
 }
 
 .visualization-title > button {
@@ -186,7 +186,7 @@
 .chat-sample-questions {
     height: 100px;
     width: 100%;
-    background-color: rgba(113, 42, 255, .1);
+    background-color: rgba(30, 50, 92, .1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,16 +217,16 @@
     border: none;
     outline: none;
     background-color: #FFF;
-    border: 2px solid rgb(113, 42, 255);
+    border: 2px solid rgb(30, 50, 92);
     border-radius: 5px;
-    color: rgb(113, 42, 255);
+    color: rgb(30, 50, 92);
 }
 
 .chat-sample-question > button:hover {
     color: #FFF;
     cursor: pointer;
-    background-color: rgb(113, 42, 255);
-    border: 2px solid rgb(113, 42, 255);
+    background-color: rgb(30, 50, 92);
+    border: 2px solid rgb(30, 50, 92);
 }
 
 .chat-sample-question>h3 {
@@ -238,7 +238,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgb(113, 42, 255);
+    border-top: 1px solid rgb(30, 50, 92);
 }
 
 .inpt-message {
@@ -259,7 +259,7 @@
     outline: none;
     margin-left: 10px;
     border-radius: 10px;
-    background-color: rgb(113, 42, 255);
+    background-color: rgb(30, 50, 92);
 }
 
 .btn-send:hover {

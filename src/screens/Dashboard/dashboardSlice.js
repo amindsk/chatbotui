@@ -19,8 +19,7 @@ export const fetchDashboardWidgets = createAsyncThunk(FETCH_DASHBOARD_WIDGETS, a
 
 export const fetchWidget = createAsyncThunk(FETCH_WIDGET, async ({ question, visualization }) => {
     try {
-        console.log({ question, visualization });
-        const { data } = await getWidgetApi({ question, visualization });
+        const { data } = await getWidgetApi({ user_msg: question, graph_type: visualization });
         return data;
     }
     catch (err) {
@@ -31,9 +30,38 @@ export const fetchWidget = createAsyncThunk(FETCH_WIDGET, async ({ question, vis
 const dashboardSlice = createSlice({
     name: DASHBOARD_SLICE_NAME,
     initialState: {
-        widgetContainers: []
+        widgetContainers: [],
+        loading: false
     },
     reducers: {
+        handleAddWidget(state, action) {
+
+            const { url, id } = action.payload;
+
+            state.widgetContainers.push({
+                id: uuidv4(),
+                widgets: [{
+                    id,
+                    url,
+                    width: 500,
+                    height: 300
+                }]
+            });
+
+        },
+        handleRemoveWidget(state, action) {
+
+            const { id } = action.payload;
+
+            state.widgetContainers = state.widgetContainers.reduce((acc, curr) => {
+                const widgets = curr.widgets.filter(widget => widget.id !== id);
+                if (widgets.length > 0) {
+                    return [...acc, { ...curr, widgets }];
+                }
+                return acc;
+            }, []);
+
+        },
         handleChangeWidgetContainer(state, action) {
             const fromIndex = state.widgetContainers.findIndex(widgetContainer => widgetContainer.id === action.payload.fromContainer);
             const widget = state.widgetContainers[fromIndex].widgets.find(widget => widget.id === action.payload.widget);
@@ -43,12 +71,12 @@ const dashboardSlice = createSlice({
             }
             const toIndex = state.widgetContainers.findIndex(widgetContainer => widgetContainer.id === action.payload.toContainer);
             const maxHeight = state.widgetContainers[toIndex].widgets.reduce((acc, curr) => {
-                if(curr.height > acc) {
+                if (curr.height > acc) {
                     acc = curr.height;
                 }
                 return acc;
             }, 0);
-            state.widgetContainers[toIndex].widgets.push({...widget, height: maxHeight});
+            state.widgetContainers[toIndex].widgets.push({ ...widget, height: maxHeight });
         },
         handleChangeWidgetSize(state, action) {
             const containerIndex = state.widgetContainers.findIndex(widgetContainer => widgetContainer.id === action.payload.containerId);
@@ -59,13 +87,11 @@ const dashboardSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchDashboardWidgets.fulfilled, (state, action) => {
-            console.log("fetchDashboardWidgets", action.payload);
         });
+        builder.addCase(fetchDashboardWidgets.pending, (state, action) => state.loading = true);
         builder.addCase(fetchWidget.fulfilled, (state, action) => {
-
             var binaryData = [];
             binaryData.push(action.payload);
-
             state.widgetContainers.push({
                 id: uuidv4(),
                 widgets: [{
@@ -76,15 +102,20 @@ const dashboardSlice = createSlice({
                 }]
             });
 
+            state.loading = false;
         })
+        builder.addCase(fetchDashboardWidgets.rejected, (state, action) => state.loading = false);
     }
 });
 
 export const getWidgetContainers = (state) => state.dashboard.widgetContainers;
+export const getDashboardLoading = (state) => state.dashboard.loading;
 
 export const {
     handleChangeWidgetContainer,
-    handleChangeWidgetSize
+    handleChangeWidgetSize,
+    handleAddWidget,
+    handleRemoveWidget
 } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

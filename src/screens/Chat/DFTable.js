@@ -21,13 +21,13 @@ const DFTable = ({ df }) => {
   HeaderRow: `
     font-size: large;
     color: #FFF;
-    background-color: rgb(113, 42, 255);
+    background-color: rgb(30, 50, 92);
   `,
   Row: `
     font-size: large;
 
     &:not(:last-of-type) .td {
-      border-bottom: 1px solid rgb(113, 42, 255);
+      border-bottom: 1px solid rgb(30, 50, 92);
     }
 
     &:hover {
@@ -35,9 +35,9 @@ const DFTable = ({ df }) => {
     }
   `,
   BaseCell: `
-    border-bottom: 1px solid rgb(113, 42, 255);
-    border-right: 1px solid rgb(113, 42, 255);
-    border-left: 1px solid rgb(113, 42, 255);
+    border-bottom: 1px solid rgb(30, 50, 92);
+    border-right: 1px solid rgb(30, 50, 92);
+    border-left: 1px solid rgb(30, 50, 92);
 
     padding: 8px;
     height: 52px;

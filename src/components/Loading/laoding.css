@@ -1,0 +1,48 @@
+.backdrop {
+    z-index: 50;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.text {
+    z-index: 51;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text>h1 {
+    color: white;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+.animation {
+    width: 200px;
+    height: 200px;
+    border: 20px double white;
+    border-radius: 10px;
+    position: absolute;
+    transform: rotate(0deg);
+    animation-name: rotate-box;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate-box {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}

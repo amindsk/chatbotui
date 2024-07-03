@@ -88,7 +88,7 @@ const chatSlice = createSlice({
 
 export const getMessage = state => state.chat.message;
 export const getMessages = state => state.chat.messages;
-export const getLoading = state => state.chat.loading;
+export const getChatLoading = state => state.chat.loading;
 
 export const {
     handleChangeMessage,
